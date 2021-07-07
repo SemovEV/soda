@@ -1,0 +1,12 @@
+.main__section{
+    width: 100%;
+    max-height: 1200px;
+    height: 100%;
+}
+.main__background{
+    background-image: url(./../../images/nsz_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}

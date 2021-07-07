@@ -1,0 +1,38 @@
+header{
+    position: absolute;
+    height: 124px;
+    width: 100%;
+    margin-top: 10px;
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 18px;
+}
+.header__container{
+    height: 124px;
+    width: 100%;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    background-image: url("./../../images/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 153px;
+    height: 143px;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 482px;
+    height: 22px;
+}
+.navigation .navLink{
+    cursor: pointer;
+    transition: 0.5s;
+}
+.navigation .navLink:hover{
+    color: #FF9800;
+}

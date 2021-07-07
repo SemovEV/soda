@@ -1,24 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    color: #fd8c21;
-    font-family: 'Merriweather', serif;
-}
-ul{
-    list-style: none;
-}
-header{
-    display: flex;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-}
-.logo img{
-    width: 50%;
-}
-header nav{
-    display: flex;
-}
-.wrapper{
-    background-color: #000000;
-}
+@import "_global.css";
+@import "_fonts.css";
+
+
+/* COMPONENTS */
+
+@import "./components/_header.css";
+@import "./components/_first.css";
