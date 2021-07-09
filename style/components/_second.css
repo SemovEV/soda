@@ -1,0 +1,28 @@
+.history__section{
+    width: 100%;
+    max-height: 1200px;
+    height: 100%;
+    color: #ffffffbe;
+}
+.history__legend{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ff990091;
+    text-transform: uppercase;
+    font-family: Roboto-bold;
+    font-size: 20px;
+    font-weight: 900;
+}
+.history__legend h2{
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.legend__active{
+    color: #ff9900;
+}
+.history__slider{
+    display: flex;
+}
