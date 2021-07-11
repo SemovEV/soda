@@ -24,5 +24,26 @@
     color: #ff9900;
 }
 .history__slider{
-    display: flex;
+    margin-top: 2em;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 700px;
+    height: 100%;
+}
+.history__first, .history__second{
+    width: 100%;
+    transition: 1s;
+    position: absolute;
+}
+.first__img{
+    background-image: url("./../../images/nsz_history_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 593px;
+    width: 936px;
+    z-index: 100;
+}
+.history__second{
+    transform: translate(100%);
 }
