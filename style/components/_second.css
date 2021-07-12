@@ -16,7 +16,7 @@
     font-weight: 900;
 }
 .history__legend h2{
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -28,7 +28,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    min-height: 700px;
+    min-height: 900px;
     height: 100%;
 }
 .history__first, .history__second{
@@ -42,8 +42,31 @@
     background-repeat: no-repeat;
     height: 593px;
     width: 936px;
-    z-index: 100;
 }
 .history__second{
     transform: translate(100%);
+}
+.slider__first{
+    max-height: 800px;
+    width: 100%;
+    height: 100%;
+}
+.video{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.video_first{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 600px;
+    width: 100%;
+    height: 100%;
+}
+.video_first video{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
