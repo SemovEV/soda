@@ -56,12 +56,16 @@
     left: 0;
     top: 0;
 }
+.calc_video{
+    -o-object-fit: cover;
+    object-fit: cover;
+}
 .video_first{
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    min-height: 600px;
+    min-height: 720px;
     width: 100%;
     height: 100%;
 }
