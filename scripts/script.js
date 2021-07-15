@@ -1,7 +1,6 @@
 const h2 = document.querySelectorAll(".history__legend h2");
 const history_first = document.querySelector(".history__first");
 const history_second = document.querySelector(".history__second");
-console.log(history_first, history_second);
 
 
 //Переключение между заголовками при нажатии
