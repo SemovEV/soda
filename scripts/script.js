@@ -1,16 +1,7 @@
+//Переключение между заголовками при нажатии
 const h2 = document.querySelectorAll(".history__legend h2");
 const history_first = document.querySelector(".history__first");
 const history_second = document.querySelector(".history__second");
-
-//Для переключения слайдера видео
-const descrip_nav = document.querySelectorAll(".description__nav");
-const video_first = document.querySelector(".video_first");
-const video_second = document.querySelector(".video_second");
-const video_third = document.querySelector(".video_third");
-
-
-
-//Переключение между заголовками при нажатии
 h2.forEach(item =>{
     item.addEventListener("click", () => {
         for(var i = 0; i < h2.length; i++){
@@ -31,6 +22,11 @@ h2.forEach(item =>{
 })
 
 
+//Для переключения слайдера видео
+const descrip_nav = document.querySelectorAll(".description__nav");
+const video_first = document.querySelector(".video_first");
+const video_second = document.querySelector(".video_second");
+const video_third = document.querySelector(".video_third");
 //Слайдер видео про историю
 descrip_nav.forEach(nav => {
     nav.addEventListener("click", () => {
@@ -57,3 +53,24 @@ descrip_nav.forEach(nav => {
         }
     });
 })
+
+
+//Для плавной прокрутки
+const a = document.querySelectorAll(".navLink a");
+for(let anchor of a){
+    anchor.addEventListener("click", function (e){
+
+        e.preventDefault;
+
+        const block = anchor.getAttribute("href");
+
+        document.getElementById(block).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+}
+
+
+
+
