@@ -34,16 +34,26 @@ descrip_nav.forEach(nav => {
             if(descrip_nav[i] == nav){
                 descrip_nav[i].classList.add("description__nav__active");
                 if(i == 0){
+                    video_first.style.zIndex = 1;
                     video_first.style.opacity = 100;
+                    video_second.style.zIndex = -1;
                     video_second.style.opacity = 0;
+                    video_third.style.zIndex = -1;
                     video_third.style.opacity = 0;
                 }else if(i == 1){
+                    video_first.style.zIndex = -1;
                     video_first.style.opacity = 0;
+                    video_second.style.zIndex = 1;
                     video_second.style.opacity = 100;
+                    video_third.style.zIndex = -1;
                     video_third.style.opacity = 0;
                 }else{
+                    video_first.style.zIndex = -1;
                     video_first.style.opacity = 0;
+                    video_second.style.zIndex = -1;
                     video_second.style.opacity = 0;
+                    video_third.style.zIndex = 1;
+                    video_third.style.opacity = 100;
                     video_third.style.opacity = 100;
                 }
             }
@@ -62,7 +72,7 @@ for(let anchor of a){
 
         e.preventDefault;
 
-        const block = anchor.getAttribute("href");
+        var block = anchor.getAttribute("href");
 
         document.getElementById(block).scrollIntoView({
             behavior: 'smooth',

@@ -6,7 +6,6 @@
 body{
     width: 100%;
     max-height: 4800px;
-    /* height: 100vh; */
 }
 .wrapper{
     background-color: #0F0F0F;
@@ -16,4 +15,8 @@ body{
 .container{
     max-width: 90%;
 	margin: 0 auto;
+}
+a{
+    color: #fff;
+    text-decoration: none;
 }
