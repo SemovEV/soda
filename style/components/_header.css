@@ -2,7 +2,7 @@ header{
     position: absolute;
     height: 124px;
     width: 100%;
-    margin-top: 10px;
+    padding-top: 10px;
     font-family: Roboto;
     font-weight: 900;
     font-size: 18px;
@@ -16,7 +16,7 @@ header{
     justify-content: space-between;
 }
 .logo{
-    background-image: url("./../../images/logo.png");
+    background-image: url("./../../images/logo_bl.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 153px;
@@ -29,10 +29,10 @@ header{
     width: 482px;
     height: 22px;
 }
-.navigation .navLink{
+.navigation .navLink a{
     cursor: pointer;
     transition: 0.5s;
 }
-.navigation .navLink:hover{
-    color: #FF9800;
+.navigation .navLink a:hover{
+    color: #5981f0;
 }

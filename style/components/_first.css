@@ -4,10 +4,29 @@
     height: 100vh;
 }
 .main__background{
-    background-image: url(./../../images/nsz_bg1.png);
-    background-size: cover;
+    /* background-image: url(./../../images/nsz_bg1.png); */
+    background-image: url(./../../images/nsz_bg2.JPEG);
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    object-fit: cover;
     background-repeat: no-repeat;
     width: 100%;
     max-height: 1200px;
     height: 100%;
+}
+.main__section h1{
+    color: #ffffff;
+    z-index: 1;
+    font-family: Roboto-bold;
+    position: absolute;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 30%;
+    cursor: pointer;
+    font-size: 100px;
+    font-weight: 900;
+    transition: 0.5s font-size;
 }

@@ -81,6 +81,41 @@ for(let anchor of a){
     })
 }
 
+//Для плавной прокрутки на вверх
+const main_h1 = document.querySelector(".main__section h1");
+    main_h1.addEventListener("click", function (e){
+
+        // e.preventDefault;
+
+        var block = main_h1.getAttribute("class");
+
+        document.getElementById(block).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+
+
+//Отслеживание скролла
+window.addEventListener('scroll', function() {
+    if (this.pageYOffset >= 380){
+        main_h1.style.cssText= `
+        position: fixed;
+        top: 2%;
+        left: 55%;
+        width: 50%;
+        font-size: 48px;
+        `
+    }else{
+        main_h1.style.cssText= `
+        position: block;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        transform: translate(-45%, -50%);
+        `
+    }
+  });
 
 
 

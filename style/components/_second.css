@@ -1,15 +1,15 @@
 .history__section{
+    margin-top: 30px;
     width: 100%;
     max-height: 1200px;
     height: 100%;
-    color: #ffffffbe;
+    color: #686767;
 }
 .history__legend{
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ff990091;
+    color: #686767;
     text-transform: uppercase;
     font-family: Roboto-bold;
     font-size: 20px;
@@ -21,7 +21,7 @@
     transition: 0.5s;
 }
 .legend__active{
-    color: #ff9900;
+    color: #5981f0;
 }
 .history__slider{
     margin-top: 2em;
@@ -42,11 +42,25 @@
     background-image: url("./../../images/nsz_history_1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 593px;
-    width: 936px;
+    margin-top: 2em;
+    height: 90%;
+    width: 95%;
 }
 .history__second{
     transform: translate(100%);
+}
+.first__description{
+    width: 1000px;
+    font-family: roboto;
+    cursor:default;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    color: #000;
 }
 .second__description{
     width: 665px;
@@ -127,11 +141,11 @@
     text-align: center;
     cursor: pointer;
     width: 300px;
-    color: #ffffff6b;
+    color: #686767a6;
 }
 .description__nav__active{
-    color: #ffffff;
-    border-bottom: 2px solid white;
+    color: #5981f0;
+    border-bottom: 2px solid #5981f0;
 }
 .description__nav:nth-child(2){
     width: 430px;
