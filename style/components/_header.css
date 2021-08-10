@@ -21,8 +21,12 @@ header{
     background-repeat: no-repeat;
     width: 153px;
     height: 143px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 .navigation{
+    position: absolute;
+    right: 3em;
     display: flex;
     align-items: center;
     justify-content:space-between;

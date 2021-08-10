@@ -82,12 +82,11 @@ for(let anchor of a){
 }
 
 //Для плавной прокрутки на вверх
-const main_h1 = document.querySelector(".main__section h1");
-    main_h1.addEventListener("click", function (e){
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", function (e){
 
-        // e.preventDefault;
-
-        var block = main_h1.getAttribute("class");
+        var block = logo.getAttribute("class");
+        block = block.substr(5);
 
         document.getElementById(block).scrollIntoView({
             behavior: 'smooth',
@@ -98,24 +97,20 @@ const main_h1 = document.querySelector(".main__section h1");
 
 //Отслеживание скролла
 window.addEventListener('scroll', function() {
-    if (this.pageYOffset >= 380){
-        main_h1.style.cssText= `
+    if (this.pageYOffset >= 10){
+        logo.style.cssText= `
         position: fixed;
-        top: 2%;
-        left: 50%;
-        width: 50%;
-        font-size: 32px;
+        top: 0%;
+        left: 0%;
+        width: 93px;
+        height: 83px;
         `
     }else{
-        main_h1.style.cssText= `
+        logo.style.cssText= `
         position: block;
-        top: 50%;
-        left: 45%;
-        width: 80%;
-        transform: translate(-45%, -50%);
+        top: 0%;
+        left: 0%;
         `
     }
   });
-
-
 

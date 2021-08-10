@@ -26,8 +26,6 @@
     transform: translate(-45%, -50%);
     width: 80%;
     letter-spacing: 4px;
-    cursor: pointer;
     font-size: 90px;
     font-weight: 900;
-    transition: 0.5s font-size;
 }
