@@ -114,3 +114,18 @@ window.addEventListener('scroll', function() {
     }
   });
 
+
+  //переключение продукции (навигация)
+const card_nav = document.querySelectorAll(".card__nav .nav");
+card_nav.forEach(item =>{
+    item.addEventListener("click", () => {
+        for(var i = 0; i < card_nav.length; i++){
+            if(card_nav[i] == item){
+                card_nav[i].classList.add("active");
+            }else{
+                card_nav[i].classList.remove("active");
+            }
+        }
+    });
+})
+

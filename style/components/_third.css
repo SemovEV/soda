@@ -1,6 +1,114 @@
 .production__section{
     margin-top: 30px;
     width: 100%;
-    min-height: 1200px;
+    min-height: 900px;
     height: 100%;
+}
+.prod__container h2{
+    color: #686767;
+    text-transform: uppercase;
+    font-family: Roboto-bold;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}
+.all__cards{
+    margin-top: 3em;
+    margin-bottom: 10em;
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.all__cards .card{
+    width: 1028px;
+    height: 525px;
+    background-color: #6867674b;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.25);
+}
+.card .back_img{
+    width: 42%;
+    height: 100%;
+    background-image: url(./../../images/сода2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+.card .descrip{
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.descrip .card_h3{
+    margin-top: 24px;
+    margin-bottom: 74px;
+    color: #5981f0;
+    text-transform: uppercase;
+    font-family: Roboto-bold;
+    font-size: 30px;
+    font-weight: 900;
+}
+.description_card{
+    margin-left: 43px;
+}
+.description_card .description_list{
+    font-family: Roboto;
+    color: #686767;
+    font-size: 18px;
+    font-weight: 800;
+}
+.description_list li{
+    margin-top: 3em;
+    margin-left: 80px;
+    cursor: default;
+}
+.description_list li:nth-child(1){
+    margin-top: 0;
+}
+.description_list li:before{
+    content: "";
+    position: absolute;
+    background-image: url(./../../images/icon_check.png);
+    width: 35px;
+    height: 35px;
+    margin-top: -8px;
+    margin-left: -80px;
+}
+.search__icon{
+    background-image: url(./../../images/icon_search.png);
+    width: 22px;
+    height: 28px;
+    margin-top: 60px;
+    margin-left: 500px;
+    cursor: pointer;
+}
+.card__nav{
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card__nav .nav{
+    cursor: pointer;
+    width: 30px;
+    border-radius: 50px;
+    padding: 2px;
+    height: 1px;
+    background-color: #68676785;
+    transition: 0.5s width;
+}
+.card__nav .active{
+    width: 50px;
+    /* transform-origin: center; */
+    background-color: #686767;
 }
