@@ -129,3 +129,17 @@ card_nav.forEach(item =>{
     });
 })
 
+//для карусели продуктов
+const cards = document.querySelectorAll(".card");
+
+let count_card = 0;
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        console.log(card);
+        console.log(card.getBoundingClientRect().x);
+    })
+    card.style.transform = `translate(${count_card * 100}%)`;
+    count_card++;
+})
+

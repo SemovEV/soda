@@ -4,6 +4,9 @@
     min-height: 900px;
     height: 100%;
 }
+.prod__container{
+    overflow: hidden;
+}
 .prod__container h2{
     color: #686767;
     text-transform: uppercase;
@@ -13,17 +16,21 @@
     text-align: center;
 }
 .all__cards{
+    position: relative;
+    overflow: hidden;
     margin-top: 3em;
     margin-bottom: 10em;
+    /* perspective: 1000; */
     width: 100%;
     min-height: 600px;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    overflow: hidden;
+    justify-content: center;
 }
 .all__cards .card{
+    transition: 1s transform;
+    position: absolute;
     width: 1028px;
     height: 525px;
     background-color: #6867674b;
