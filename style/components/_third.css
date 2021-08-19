@@ -27,9 +27,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .all__cards .card{
-    transition: 1s transform;
+    /* transition: 0.3s transform; */
     position: absolute;
     width: 1028px;
     height: 525px;

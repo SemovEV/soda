@@ -131,15 +131,35 @@ card_nav.forEach(item =>{
 
 //для карусели продуктов
 const cards = document.querySelectorAll(".card");
-
+const all_card = document.querySelector(".all__cards");
+let isClick = 0;
 let count_card = 0;
 
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        console.log(card);
-        console.log(card.getBoundingClientRect().x);
-    })
-    card.style.transform = `translate(${count_card * 100}%)`;
-    count_card++;
+let start_click, slide_mouse, end_click;
+
+all_card.addEventListener('mousedown', (event) => {
+    isClick = 1;
+    console.log("start: " + event.clientX);
+    
+    start_click = event.clientX;
 })
 
+all_card.addEventListener('mousemove', (event) => {
+    if(isClick == 1){
+        console.log("slide: " + (start_click - event.clientX) / 10);
+        // cards[0].style.transform = `translate3d(${( * 100)+((event.clientX - start_click) / 10)}%, 0, 0)`;
+    }
+})
+
+all_card.addEventListener('mouseup', (event) => {
+    isClick = 0;
+    console.log("end: " + event.clientX);
+    end_click = event.clientX;
+    console.log("between: " + (start_click - end_click));
+})
+
+cards.forEach(card => {
+    console.log(cards[2].getBoundingClientRect().left);
+    card.style.transform = `translate3d(${count_card * 100}%, 0, 0)`;
+    count_card++;
+})
