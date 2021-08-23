@@ -139,9 +139,6 @@ let start_click, slide_mouse, end_click, between_slide, start_card1;
 
 all_card.addEventListener('mousedown', (event) => {
     isClick = 1;
-    start_card1 = cards[0].getBoundingClientRect().left;
-    console.log(cards[1].getBoundingClientRect().left);
-    console.log(cards[2].getBoundingClientRect().left);
     // console.log("start: " + event.clientX);
     
     start_click = event.clientX;
@@ -150,7 +147,7 @@ all_card.addEventListener('mousedown', (event) => {
 all_card.addEventListener('mousemove', (event) => {
     if(isClick == 1){
         // console.log("slide: " + (start_click - event.clientX) / 10);
-        cards[0].style.transform = `translate3d(${(0 * 100)+((event.clientX - start_click) / 10)}%, 0, 0)`;
+        cards[0].style.transform = `translate3d(${(0 * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
         cards[1].style.transform = `translate3d(${(1 * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
     }
 })
@@ -161,9 +158,11 @@ all_card.addEventListener('mouseup', (event) => {
     end_click = event.clientX;
     between_slide = start_click - end_click;
     // console.log("between: " + (start_click - end_click));
-    if(between_slide <= 500 && between_slide != 0){
-        cards[0].style.transform = `translate3d(0, 0, 0)`;
-        cards[1].style.transform = `translate3d(150%, 0, 0)`;
+    if(between_slide <= 500 && between_slide >= 0){
+        if(between_slide != 0){
+            cards[0].style.transform = `translate3d(0, 0, 0)`;
+            cards[1].style.transform = `translate3d(150%, 0, 0)`;
+        }
     }else{
         cards[0].style.transform = `translate3d(-150%, 0, 0)`;
         cards[1].style.transform = `translate3d(0, 0, 0)`;
@@ -171,7 +170,6 @@ all_card.addEventListener('mouseup', (event) => {
 })
 
 cards.forEach(card => {
-    console.log(card.getBoundingClientRect().left);
     card.style.transform = `translate3d(${count_card * 150}%, 0, 0)`;
     count_card++;
 })
