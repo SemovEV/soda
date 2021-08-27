@@ -137,6 +137,8 @@ let count_card = 0;
 
 let start_click, slide_mouse, end_click, between_slide, start_card1;
 
+let real_slide = 0;
+
 all_card.addEventListener('mousedown', (event) => {
     isClick = 1;
     // console.log("start: " + event.clientX);
@@ -145,10 +147,15 @@ all_card.addEventListener('mousedown', (event) => {
 })
 
 all_card.addEventListener('mousemove', (event) => {
+    console.log(real_slide);
     if(isClick == 1){
         // console.log("slide: " + (start_click - event.clientX) / 10);
-        cards[0].style.transform = `translate3d(${(0 * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
-        cards[1].style.transform = `translate3d(${(1 * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
+        for(let i = 1; i < real_slide; i++){
+            if(real_slide == i - 1)
+                cards[real_slide].style.transform = `translate3d(${(0 * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
+            else
+                cards[real_slide].style.transform = `translate3d(${(real_slide - i * 150)+((event.clientX - start_click) / 10)}%, 0, 0)`;
+        }
     }
 })
 
@@ -164,6 +171,14 @@ all_card.addEventListener('mouseup', (event) => {
             cards[1].style.transform = `translate3d(150%, 0, 0)`;
         }
     }else{
+        if(between_slide > 0){
+            real_slide++;
+        }else if(between_slide < 0){
+            real_slide--;
+        }
+        if(real_slide <= 0){
+            real_slide = 0;
+        }
         cards[0].style.transform = `translate3d(-150%, 0, 0)`;
         cards[1].style.transform = `translate3d(0, 0, 0)`;
     }
