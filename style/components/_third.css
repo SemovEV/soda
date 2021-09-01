@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 .all__cards .card{
-    transition: 0.2s transform;
+    transition: 0.5s transform;
     position: absolute;
     width: 1028px;
     height: 525px;
@@ -43,11 +43,28 @@
 .card .back_img{
     width: 42%;
     height: 100%;
-    background-image: url(./../../images/сода2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
+}
+.card:nth-child(1) .back_img{
+    background-image: url(./../../images/сода2.jpg);
+}
+.card:nth-child(2) .back_img{
+    background-image: url(./../../images/известь2.jpg);
+}
+.card:nth-child(3) .back_img{
+    background-image: url(./../../images/Гипс2.jpg);
+}
+.card:nth-child(4) .back_img{
+    background-image: url(./../../images/ссс2.jpg);
+}
+.card:nth-child(5) .back_img{
+    background-image: url(./../../images/перлит2.jpg);
+}
+.card:nth-child(6) .back_img{
+    background-image: url(./../../images/гипс_мед2.jpg);
 }
 .card .descrip{
     width: 58%;
@@ -65,11 +82,10 @@
     font-size: 30px;
     font-weight: 900;
 }
-.card:nth-child(2) .descrip .card_h3{
-    margin-bottom: 54px;
-}
 .description_card{
+    padding-top: 2em;
     margin-left: 43px;
+    height: 350px;
 }
 .description_card .description_list{
     font-family: Roboto;
@@ -96,11 +112,11 @@
 }
 .search__icon{
     background-image: url(./../../images/icon_search.png);
+    z-index:200;
     width: 22px;
     height: 28px;
-    margin-top: 60px;
     margin-left: 500px;
-    cursor: pointer;
+    cursor: default;
 }
 .card__nav{
     width: 300px;
@@ -122,7 +138,7 @@
 .card__nav .active{
     width: 50px;
     /* transform-origin: center; */
-    background-color: #686767;
+    background-color: #5981f0;
 }
 .slider_prod{
     width: 100%;

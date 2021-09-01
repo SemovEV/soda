@@ -111,16 +111,24 @@ window.addEventListener("scroll", function () {
 //переключение продукции (навигация)
 const card_nav = document.querySelectorAll(".card__nav .nav");
 card_nav.forEach((item) => {
-  item.addEventListener("click", () => {
-    for (var i = 0; i < card_nav.length; i++) {
-      if (card_nav[i] == item) {
-        card_nav[i].classList.add("active");
-      } else {
-        card_nav[i].classList.remove("active");
-      }
-    }
-  });
+  item.addEventListener("click", card_nav_click.bind(this, item));
 });
+
+let real_slide = 0;
+
+function card_nav_click(item){
+  for (var i = 0; i < card_nav.length; i++) {
+    if (card_nav[i] == item || i == item) {
+      card_nav[i].classList.add("active");
+      real_slide = i;
+    } else {
+      card_nav[i].classList.remove("active");
+    }
+  }
+  for(let i = 0; i < cards.length; i++){
+    cards[i].style.transform = `translate3d(${(i - real_slide) * 150}%, 0, 0)`;
+  }
+}
 
 //для карусели продуктов
 const cards = document.querySelectorAll(".card");
@@ -130,31 +138,41 @@ let count_card = 0;
 
 let start_click, slide_mouse, end_click, between_slide, start_card1;
 
-let real_slide = 0;
-
-all_card.addEventListener("mousedown", (event) => {
+all_card.addEventListener("mousedown", startSlide.bind(this, 1));
+all_card.addEventListener("mousemove", moveSlide.bind(this, 1));
+all_card.addEventListener("mouseup", endSlide.bind(this, 1));
+all_card.addEventListener("touchstart", startSlide.bind(this, 2));
+all_card.addEventListener("touchmove", moveSlide.bind(this, 2));
+all_card.addEventListener("touchend", endSlide);
+//Функция обработки начала клика
+function startSlide(device, event){
   isClick = 1;
-  // console.log("start: " + event.clientX);
-
-  start_click = event.clientX;
-});
-
-all_card.addEventListener("mousemove", (event) => {
-  console.log(real_slide);
+  if(device == 2)
+    start_click = event.touches[0].clientX;
+  else if(device == 1)
+    start_click = event.clientX;
+}
+//Функция обработки движения слайдов
+function moveSlide(device, event){
   if (isClick == 1) {
-    // console.log("slide: " + (start_click - event.clientX) / 10);
-    for(let i = 0; i < cards.length; i++){
+    if(device == 2)
+      for(let i = 0; i < cards.length; i++){
+        cards[i].style.transform = `translate3d(${(i - real_slide) * 150 + (event.touches[0].clientX - start_click) / 10}%, 0, 0)`;
+      }
+    else if(device == 1)
+      for(let i = 0; i < cards.length; i++){
         cards[i].style.transform = `translate3d(${(i - real_slide) * 150 + (event.clientX - start_click) / 10}%, 0, 0)`;
-    }
+      }
   }
-});
-
-all_card.addEventListener("mouseup", (event) => {
+  if(device == 2)
+    end_click = event.touches[0].clientX;
+  else if(device == 1)
+    end_click = event.clientX;
+}
+//Функция обработки развёртывания слайдов, задание для их конечной позиции
+function endSlide(){
   isClick = 0;
-  // console.log("end: " + event.clientX);
-  end_click = event.clientX;
   between_slide = start_click - end_click;
-  // console.log("between: " + (start_click - end_click));
   if (between_slide <= 500 && between_slide >= 0 || between_slide >= -500 && between_slide <= 0) {
     if (between_slide != 0) {
         for(let i = 0; i < cards.length; i++){
@@ -167,14 +185,17 @@ all_card.addEventListener("mouseup", (event) => {
     } else if (between_slide < 0) {
       real_slide--;
     }
-    if (real_slide <= 0) {
+    if (real_slide < 0) {
+      real_slide = 5;
+    }else if (real_slide > 5){
       real_slide = 0;
     }
     for(let i = 0; i < cards.length; i++){
         cards[i].style.transform = `translate3d(${(i - real_slide) * 150}%, 0, 0)`;
     }
+    card_nav_click(real_slide);
   }
-});
+}
 
 cards.forEach((card) => {
   card.style.transform = `translate3d(${count_card * 150}%, 0, 0)`;
