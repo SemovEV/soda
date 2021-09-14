@@ -1,0 +1,46 @@
+.buyer__section{
+    margin-top: 30px;
+    width: 100%;
+    min-height: 900px;
+    height: 100%;
+    color:#686767;
+}
+.buyer__section .buyer__description{
+    margin-top: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #000;
+}
+.buyer__section .buyer__description .description{
+    width: 1000px;
+    font-family: roboto;
+    cursor:default;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+}
+.buyer__section .buyer__description .list_description{
+    padding-left: 3em;
+    font-family: roboto;
+    cursor:default;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+}
+.buyer__section .buyer__description .list_description p{
+    font-family: roboto-bold;
+    font-weight: 900;
+    font-size: 24px;
+}
+.buyer__section .buyer__description .list_description li{
+    padding: 1em 1em;
+}
+.active_li{
+    transition: 1s;
+    background-color: #5981f0;
+    border-radius: 20px;
+}

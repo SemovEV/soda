@@ -24,3 +24,11 @@ a{
 li{
     list-style: none;
 }
+h2{
+    color: #686767;
+    text-transform: uppercase;
+    font-family: Roboto-bold;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}

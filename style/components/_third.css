@@ -18,11 +18,11 @@
 .all__cards{
     position: relative;
     overflow: hidden;
-    margin-top: 3em;
+    margin-top: 6em;
     margin-bottom: 10em;
     /* perspective: 1000; */
     width: 100%;
-    min-height: 600px;
+    min-height: 550px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -110,9 +110,11 @@
     margin-top: -8px;
     margin-left: -80px;
 }
+.descrip a{
+z-index: 12;
+}
 .search__icon{
     background-image: url(./../../images/icon_search.png);
-    z-index:200;
     width: 22px;
     height: 28px;
     margin-left: 500px;
@@ -144,7 +146,26 @@
     width: 100%;
     height: 700px;
     position: absolute;
-    margin-top: 7em;
-    z-index: 100;
+    top: 130em;
+    z-index: 2;
     cursor: pointer;
+}
+.slider_prod:hover + .production__section .all__cards{
+    animation: moving_cards 0.6s linear;
+}
+
+
+@keyframes moving_cards{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    25%{
+        transform: translate3d(2%,0,0);
+    }
+    75%{
+        transform: translate3d(-2%,0,0);
+    }
+    100%{
+        transform: translate3d(0,0,0);
+    }
 }

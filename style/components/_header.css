@@ -23,6 +23,7 @@ header{
     height: 143px;
     cursor: pointer;
     transition: 0.5s;
+    z-index: 3;
 }
 .navigation{
     position: absolute;

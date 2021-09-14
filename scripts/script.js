@@ -157,11 +157,11 @@ function moveSlide(device, event){
   if (isClick == 1) {
     if(device == 2)
       for(let i = 0; i < cards.length; i++){
-        cards[i].style.transform = `translate3d(${(i - real_slide) * 150 + (event.touches[0].clientX - start_click) / 10}%, 0, 0)`;
+        cards[i].style.transform = `translate3d(${(i - real_slide) * 120 + (event.touches[0].clientX - start_click) / 10}%, 0, 0)`;
       }
     else if(device == 1)
       for(let i = 0; i < cards.length; i++){
-        cards[i].style.transform = `translate3d(${(i - real_slide) * 150 + (event.clientX - start_click) / 10}%, 0, 0)`;
+        cards[i].style.transform = `translate3d(${(i - real_slide) * 120 + (event.clientX - start_click) / 10}%, 0, 0)`;
       }
   }
   if(device == 2)
@@ -176,8 +176,31 @@ function endSlide(){
   if (between_slide <= 500 && between_slide >= 0 || between_slide >= -500 && between_slide <= 0) {
     if (between_slide != 0) {
         for(let i = 0; i < cards.length; i++){
-            cards[i].style.transform = `translate3d(${(i - real_slide) * 150}%, 0, 0)`;
+            cards[i].style.transform = `translate3d(${(i - real_slide) * 120}%, 0, 0)`;
         }
+    }else if(between_slide == 0){
+      switch(real_slide){
+        case 0:{
+          window.open('http://nspltd.ru/soda/');
+          break;
+        }
+        case 1:{
+          window.open('http://nspltd.ru/izvest/');
+          break;
+        }
+        case 2:{
+          window.open('http://nspltd.ru/gips/');
+          break;
+        }
+        case 3:{
+          window.open('http://nspltd.ru/smesi/');
+          break;
+        }
+        case 4:{
+          window.open('http://nspltd.ru/perlit/');
+          break;
+        }
+      }
     }
   } else {
     if (between_slide > 0) {
@@ -191,13 +214,35 @@ function endSlide(){
       real_slide = 0;
     }
     for(let i = 0; i < cards.length; i++){
-        cards[i].style.transform = `translate3d(${(i - real_slide) * 150}%, 0, 0)`;
+        cards[i].style.transform = `translate3d(${(i - real_slide) * 120}%, 0, 0)`;
     }
     card_nav_click(real_slide);
   }
 }
 
 cards.forEach((card) => {
-  card.style.transform = `translate3d(${count_card * 150}%, 0, 0)`;
+  card.style.transform = `translate3d(${count_card * 120}%, 0, 0)`;
   count_card++;
 });
+
+
+//Переключение активных классов у списка
+let buyer_li = document.querySelectorAll(".buyer__section .buyer__description .list_description li");
+let active_li = 0;
+
+
+function setActiveLi(){
+  buyer_li[active_li].classList.add("active_li");
+  if(active_li != 0)
+    buyer_li[active_li - 1].classList.remove("active_li");
+  else{
+    buyer_li[5].classList.remove("active_li");
+  }
+  if(active_li == 5){
+    active_li = 0;
+  }else{
+    active_li++;
+  }
+}
+
+var interval = setInterval(setActiveLi, 3000);
