@@ -63,11 +63,11 @@ descrip_nav.forEach((nav) => {
 });
 
 //Для плавной прокрутки
-const a = document.querySelectorAll(".navLink a");
+const a = document.querySelectorAll("a.local_link");
 for (let anchor of a) {
   anchor.addEventListener("click", function (e) {
     e.preventDefault;
-
+    console.log(anchor);
     var block = anchor.getAttribute("href");
 
     document.getElementById(block).scrollIntoView({
