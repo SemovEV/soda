@@ -4,3 +4,79 @@
     min-height: 900px;
     height: 100%;
 }
+.contact__information{
+    display: flex;
+    margin-top: 10em;
+}
+.card_contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5981f0;
+    width: 35%;
+    font-family: roboto;
+    margin-left: 2em;
+    border-radius: 10px;
+}
+.card_contact h3{
+    font-family: roboto-bold;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 24px;
+    font-weight: 900;
+}
+.card__description{
+    width: 85%;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+.card__description .adress{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.adress .img{
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-image: url(./../../images/location.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contact__sbit, .mail__sbit{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.contact__sbit a, .contact__kadr a, .mail__sbit a, .mail__kadr a{
+    margin-top: 5px;
+    position: relative;
+    margin-left: 50px; 
+}
+.contact__sbit a:before, .contact__kadr a:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url(./../../images/phone.png);
+    background-size: contain;
+}
+.mail__sbit a:before, .mail__kadr a:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url(./../../images/mail.png);
+    background-size: contain;
+}
+.contact{
+    border-bottom: 1px solid #a1a1a1;
+    padding-bottom: 10px;
+}
