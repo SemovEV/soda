@@ -32,3 +32,13 @@ h2{
     font-weight: 900;
     text-align: center;
 }
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    body{
+        width: 100%;
+    }
+    .container{
+        max-width: 100%;
+    }
+}

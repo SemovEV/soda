@@ -67,7 +67,6 @@ const a = document.querySelectorAll("a.local_link");
 for (let anchor of a) {
   anchor.addEventListener("click", function (e) {
     e.preventDefault;
-    console.log(anchor);
     var block = anchor.getAttribute("href");
 
     document.getElementById(block).scrollIntoView({
@@ -78,21 +77,23 @@ for (let anchor of a) {
 }
 
 //Для плавной прокрутки на вверх
-const logo = document.querySelector(".logo");
-logo.addEventListener("click", function (e) {
-  var block = logo.getAttribute("class");
-  block = block.substr(5);
-
-  document.getElementById(block).scrollIntoView({
-    behavior: "smooth",
-    block: "start",
+const logos = document.querySelectorAll(".logo");
+for (let logo of logos){
+  logo.addEventListener("click", function (e) {
+    var block = logo.getAttribute("class");
+    block = block.substr(5);
+  
+    document.getElementById(block).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
-});
+}
 
 //Отслеживание скролла
 window.addEventListener("scroll", function () {
   if (this.pageYOffset >= 10) {
-    logo.style.cssText = `
+    logos[0].style.cssText = `
         position: fixed;
         top: 0%;
         left: 0%;
@@ -100,7 +101,7 @@ window.addEventListener("scroll", function () {
         height: 83px;
         `;
   } else {
-    logo.style.cssText = `
+    logos[0].style.cssText = `
         position: block;
         top: 0%;
         left: 0%;
@@ -246,3 +247,40 @@ function setActiveLi(){
 }
 
 var interval = setInterval(setActiveLi, 3000);
+
+
+//Открытие меню на телефонах
+const menu = document.querySelector(".burger_menu");
+const nav = document.querySelector(".navigation");
+const nav_top = document.querySelector(".burger_top");
+const nav_bot = document.querySelector(".burger_bottom");
+const header = document.querySelector(".header__container");
+let click_menu = 0;
+
+menu.addEventListener("click", () => {
+  click_menu++;
+  if (click_menu == 1){
+    nav_top.style.cssText = `
+    top: 4px;
+    width: 10px;
+    transform: rotate(-45deg);
+    `;
+    nav_bot.style.cssText = `
+    top: -4px;
+    width: 10px;
+    transform: rotate(45deg);
+    `;
+    header.style.transform = "translate(0)";
+  }else if (click_menu == 2) {
+    click_menu = 0;
+    nav_top.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    nav_bot.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    header.style.transform = "translate(90%)";
+  }
+});

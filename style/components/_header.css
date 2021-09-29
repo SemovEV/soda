@@ -26,8 +26,6 @@ header{
     z-index: 3;
 }
 .navigation{
-    position: absolute;
-    right: 3em;
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -40,4 +38,68 @@ header{
 }
 .navigation .navLink a:hover{
     color: #5981f0;
+}
+.burger_menu{
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: 1s;
+}
+.burger_top, .burger_bottom{
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+    transition: 0.5s;
+}
+.burger_top{
+    top: 7px;
+}
+.burger_bottom{
+    top: -7px;
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    header{
+        position: absolute;
+        height: 124px;
+        width: 100%;
+        padding-top: 0;
+        font-family: Roboto;
+        font-weight: 900;
+        font-size: 18px;
+    }
+    .header__container{
+        position: fixed;
+        transition: 1s transform;
+        transform: translate(90%);
+    }
+    .logo{
+        width: 63px;
+        height: 53px;
+    }
+    .navigation{
+        flex-direction: column;
+        width: 30%;
+        margin-top: -4em;
+    }
+    .navigation a{
+        color: #000;
+    }
+    .burger_menu{
+        display: block;
+        width: 20px;
+        border-radius: 20%;
+    }
+    .burger_top{
+        border-radius: 20%;
+        right: 0;
+    }
+    .burger_bottom{
+        border-radius: 20%;
+        right: 0;
+    }
 }

@@ -3,4 +3,23 @@ footer{
     min-height: 200px;
     height: 100%;
     background-color: #525252;
+    font-family: roboto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer__navigation{
+    font-weight: 500;
+    font-size: 18px;
+}
+.footer__navigation .navLink{
+    margin-bottom: 1em;
+}
+.footer__navigation .navLink:hover a{
+    transition: 0.5s;
+    color: #5981f0;
+}
+.footer__navigation .footer_descrip{
+    font-weight: 500;
+    font-size: 18px;
 }
