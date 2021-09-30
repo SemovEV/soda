@@ -73,6 +73,7 @@ header{
         font-size: 18px;
     }
     .header__container{
+        z-index: 10;
         position: fixed;
         transition: 1s transform;
         transform: translate(90%);
@@ -80,8 +81,10 @@ header{
     .logo{
         width: 63px;
         height: 53px;
+        margin-left: -7em;
     }
     .navigation{
+        margin-right: 1em;
         flex-direction: column;
         width: 30%;
         margin-top: -4em;

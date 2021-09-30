@@ -1,3 +1,12 @@
+//Определение с какого устройства сидит пользователь
+let isTel = 0;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  isTel = 1;
+} else isTel = 2;
+console.log(isTel);
+
+
+
 //Переключение между заголовками при нажатии
 const h2 = document.querySelectorAll(".history__legend h2");
 const history_first = document.querySelector(".history__first");
@@ -66,6 +75,18 @@ descrip_nav.forEach((nav) => {
 const a = document.querySelectorAll("a.local_link");
 for (let anchor of a) {
   anchor.addEventListener("click", function (e) {
+
+    click_menu = 0;
+    nav_top.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    nav_bot.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    header.style.transform = "translate(90%)";
+
     e.preventDefault;
     var block = anchor.getAttribute("href");
 
@@ -90,22 +111,24 @@ for (let logo of logos){
   });
 }
 
-//Отслеживание скролла
+//Отслеживание скролла для логотипа
 window.addEventListener("scroll", function () {
-  if (this.pageYOffset >= 10) {
-    logos[0].style.cssText = `
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 93px;
-        height: 83px;
-        `;
-  } else {
-    logos[0].style.cssText = `
-        position: block;
-        top: 0%;
-        left: 0%;
-        `;
+  if(isTel == 2){
+    if (this.pageYOffset >= 10) {
+      logos[0].style.cssText = `
+          position: fixed;
+          top: 0%;
+          left: 0%;
+          width: 93px;
+          height: 83px;
+          `;
+    } else {
+      logos[0].style.cssText = `
+          position: block;
+          top: 0%;
+          left: 0%;
+          `;
+    }
   }
 });
 

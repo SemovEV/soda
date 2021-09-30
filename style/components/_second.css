@@ -155,3 +155,58 @@
 .description__nav:nth-child(2){
     width: 430px;
 }
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    .history__legend{
+        width: 80%;
+    }
+    .history__legend h2{
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .first__description{
+        width: 80%;
+        font-size: 18px;
+        line-height: 18px;
+        top: 1em;
+        left: 1em;
+    }
+    .second__description{
+        width: 85%;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .history__slider{
+        margin-top: 0;
+        min-height: 750px;
+    }
+    .first__img{
+        margin-top: 0;
+        height: 90%;
+        width: 100%;
+    }
+    .history__first, .history__second{
+        margin-top: 2em;
+        max-height: 700px;
+    }
+    .video_first, .video_second, .video_third{
+        max-height: 500px;
+    }
+    .slider__first{
+        margin-top: 1em;
+        max-height: 700px;
+    }
+    .second__slider{
+        max-height: 600px;
+    }
+    .descrip_slider{
+        margin-top: -5em;
+        font-size: 12px;
+        line-height: 12px;
+        justify-content: space-around;
+    }
+    .description__nav{
+        width: 100px;
+    }
+}
