@@ -85,3 +85,32 @@
         transform: translateY(0);
     }
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    .buyer__section{
+        margin-top: 1em;
+        width: 100%;
+        min-height: 700px;
+        height: 100%;
+        color:#686767;
+    }
+    .buyer__section .buyer__description{
+        margin-top: 1em;
+        flex-direction: column;
+        color: #000;
+    }
+    .buyer__section .buyer__description .description{
+        width: 100%;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .buyer__section .buyer__description .list_description{
+        margin-top: 1em;
+        padding-left: 0;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .buyer__section__redirection{
+        margin-top: 1em;
+    }
+}

@@ -75,7 +75,7 @@ header{
     .header__container{
         z-index: 10;
         position: fixed;
-        transition: 1s transform;
+        transition: 1s;
         transform: translate(90%);
     }
     .logo{
@@ -90,7 +90,7 @@ header{
         margin-top: -4em;
     }
     .navigation a{
-        color: #000;
+        color: #000000;
     }
     .burger_menu{
         display: block;

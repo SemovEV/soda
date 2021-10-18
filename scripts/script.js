@@ -1,9 +1,14 @@
 //Определение с какого устройства сидит пользователь
 let isTel = 0;
+let click_menu = 0;
+const menu = document.querySelector(".burger_menu");
+const nav = document.querySelector(".navigation");
+const nav_top = document.querySelector(".burger_top");
+const nav_bot = document.querySelector(".burger_bottom");
+const header = document.querySelector(".header__container");
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
   isTel = 1;
 } else isTel = 2;
-console.log(isTel);
 
 
 
@@ -85,7 +90,22 @@ for (let anchor of a) {
     transform: rotate(0deg);
     width: 20px;
     `;
-    header.style.transform = "translate(90%)";
+    if(isTel == 1){
+      header.style.transform = "translate(90%)";
+    }
+    header.style.background = "none";
+
+    nav_top.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    nav_bot.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    if(isTel == 1){
+      header.style.transform = "translate(90%)";
+    }
 
     e.preventDefault;
     var block = anchor.getAttribute("href");
@@ -103,6 +123,20 @@ for (let logo of logos){
   logo.addEventListener("click", function (e) {
     var block = logo.getAttribute("class");
     block = block.substr(5);
+
+    click_menu = 0;
+    nav_top.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    nav_bot.style.cssText = `
+    transform: rotate(0deg);
+    width: 20px;
+    `;
+    if(isTel == 1){
+      header.style.transform = "translate(90%)";
+    }
+    header.style.background = "none";
   
     document.getElementById(block).scrollIntoView({
       behavior: "smooth",
@@ -197,7 +231,13 @@ function moveSlide(device, event){
 function endSlide(){
   isClick = 0;
   between_slide = start_click - end_click;
-  if (between_slide <= 500 && between_slide >= 0 || between_slide >= -500 && between_slide <= 0) {
+  let need_slide = 500;
+  if (isTel == 1){
+    need_slide = 100;
+  }else{
+    need_slide = 500;
+  }
+  if (between_slide <= need_slide && between_slide >= 0 || between_slide >= -1 * need_slide && between_slide <= 0) {
     if (between_slide != 0) {
         for(let i = 0; i < cards.length; i++){
             cards[i].style.transform = `translate3d(${(i - real_slide) * 120}%, 0, 0)`;
@@ -273,12 +313,8 @@ var interval = setInterval(setActiveLi, 3000);
 
 
 //Открытие меню на телефонах
-const menu = document.querySelector(".burger_menu");
-const nav = document.querySelector(".navigation");
-const nav_top = document.querySelector(".burger_top");
-const nav_bot = document.querySelector(".burger_bottom");
-const header = document.querySelector(".header__container");
-let click_menu = 0;
+
+
 
 menu.addEventListener("click", () => {
   click_menu++;
@@ -294,6 +330,7 @@ menu.addEventListener("click", () => {
     transform: rotate(45deg);
     `;
     header.style.transform = "translate(0)";
+    header.style.background = "#ffffffce";
   }else if (click_menu == 2) {
     click_menu = 0;
     nav_top.style.cssText = `
@@ -305,5 +342,6 @@ menu.addEventListener("click", () => {
     width: 20px;
     `;
     header.style.transform = "translate(90%)";
+    header.style.background = "none";
   }
 });

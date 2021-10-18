@@ -201,12 +201,15 @@
         max-height: 600px;
     }
     .descrip_slider{
-        margin-top: -5em;
+        margin-top: -6em;
         font-size: 12px;
         line-height: 12px;
         justify-content: space-around;
     }
     .description__nav{
+        width: 100px;
+    }
+    .description__nav:nth-child(2){
         width: 100px;
     }
 }
