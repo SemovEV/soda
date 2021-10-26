@@ -1,16 +1,16 @@
-@import "style/_global.css";
-@import "style/_fonts.css";
+@import "_global.css";
+@import "_fonts.css";
 
 
 /* COMPONENTS */
 
-@import "style/components/_header.css";
-@import "style/components/_first.css";
-@import "style/components/_second.css";
-@import "style/components/_third.css";
-@import "style/components/_four.css";
-@import "style/components/_five.css";
-@import "style/components/_footer.css";
+@import "_header.css";
+@import "_first.css";
+@import "_second.css";
+@import "_third.css";
+@import "_four.css";
+@import "_five.css";
+@import "_footer.css";
 
 
 @font-face {
