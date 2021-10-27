@@ -1,13 +1,13 @@
-@import "./_global.css";
-@import "./_fonts.css";
+@import "./global.css";
+@import "./fonts.css";
 
 
 /* COMPONENTS */
 
-@import "./components/_header.css";
-@import "./components/_first.css";
-@import "./components/_second.css";
-@import "./components/_third.css";
-@import "./components/_four.css";
-@import "./components/_five.css";
-@import "./components/_footer.css";
+@import "./components/header.css";
+@import "./components/first.css";
+@import "./components/second.css";
+@import "./components/third.css";
+@import "./components/four.css";
+@import "./components/five.css";
+@import "./components/footer.css";
